@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controllers.CreateCSVRecordWindowController"
+            prefHeight="75.0" prefWidth="400.0">
+
+    <headerText>
+        Создание записи в CSV файле
+    </headerText>
+    <content>
+        <GridPane vgap="10" hgap="10">
+            <Label  text="Адрес ресурса в сети Интернет:" GridPane.rowIndex="0"
+                   GridPane.columnIndex="0"/>
+            <TextField fx:id="resourceAddressField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Режим доступа" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <fx:define>
+                <ToggleGroup fx:id="chooseAccessMode"/>
+            </fx:define>
+            <VBox GridPane.rowIndex="1" GridPane.columnIndex="1">
+                <RadioButton fx:id="freeAccessMode" toggleGroup="$chooseAccessMode" text="Свободный" selected="true"/>
+                <RadioButton fx:id="closedAccessMode" toggleGroup="$chooseAccessMode" text="Закрытый"/>
+            </VBox>
+            <Label text="Дата доступа" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <DatePicker fx:id="datePicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        </GridPane>
+    </content>
+</DialogPane>

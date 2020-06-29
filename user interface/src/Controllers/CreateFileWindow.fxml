@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controllers.CreateFileWindowController"
+            prefHeight="100.0" prefWidth="300.0">
+    <content>
+        <GridPane vgap="10" hgap="10" >
+            <Label text="Название файла:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="fileNameField" text="Новый файл" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Формат:" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER"/>
+            <VBox GridPane.rowIndex="1" GridPane.columnIndex="1" spacing="5">
+<!--                <spacing>-->
+<!--                </spacing>-->
+<!--                <padding>-->
+<!--&lt;!&ndash;                    <Insets top=""/>&ndash;&gt;-->
+<!--                </padding>-->
+                <fx:define>
+                    <ToggleGroup fx:id="chooseFileType"/>
+                </fx:define>
+                <RadioButton fx:id="csvRadioButton" toggleGroup="$chooseFileType" selected="true">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@/resources/csv55.png"/>
+                        </ImageView>
+                    </graphic>
+                </RadioButton>
+                <RadioButton fx:id="xmlRadioButton" toggleGroup="$chooseFileType">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@/resources/xml55.png"/>
+                        </ImageView>
+                    </graphic>
+                </RadioButton>
+            </VBox>
+        </GridPane>
+    </content>
+</DialogPane>

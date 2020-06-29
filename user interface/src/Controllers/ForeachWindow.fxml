@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controllers.ForeachWindowController">
+    <content>
+        <GridPane>
+            <Label text="Введите конструкцию по аналогии с примером" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <Label text="Поддерживаемые типы - int, char, double" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextArea fx:id="inputTextArea" style="-fx-font-size: 15px;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField editable="false" fx:id="resultTextField" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <Button text="Проанализировать" fx:id="analizeButton" onAction="#analizeConstr" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        </GridPane>
+    </content>
+</DialogPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controllers.FilesDBWindowController"
+            prefHeight="600.0" prefWidth="600.0">
+    <center>
+        <TableView fx:id="fileTable" prefHeight="400.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn prefWidth="100" text="id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="290" text="Имя файла">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+            <BorderPane.margin>
+                <Insets right="10.0" />
+            </BorderPane.margin>
+        </TableView>
+    </center>
+    <right>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="170.00" spacing="20.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="openFileButton" onAction="#buttonClicked" maxWidth="Infinity" mnemonicParsing="false" text="Открыть" />
+                <Button fx:id="deleteFileButton" onAction="#buttonClicked" maxWidth="Infinity" mnemonicParsing="false" text="Удалить" />
+                <Button fx:id="addFileButton" onAction="#buttonClicked" maxWidth="Infinity" mnemonicParsing="false" text="Добавить" />
+            </children>
+            <BorderPane.margin>
+                <Insets right="10.0" />
+            </BorderPane.margin>
+        </VBox>
+    </right>
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <ProgressBar fx:id="progress" visible="false" prefWidth="500.0" progress="0.0">
+            </ProgressBar>
+        </HBox>
+    </bottom>
+</BorderPane>

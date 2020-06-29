@@ -1,0 +1,5 @@
+/Libs/*
+!/Libs/AsmProject.jar
+!/Libs/Analizer Project.jar
+/Запускаемый файл
+/user interface/.idea

@@ -1,0 +1,175 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane
+            fx:id="mainBorderPane"
+            fx:controller="Controllers.MainWindowController"
+            xmlns:fx="http://javafx.com/fxml">
+
+    <top>
+        <MenuBar>
+            <Menu text="Работа с файлами" fx:id="fileMenu">
+                <items>
+                    <MenuItem fx:id="createFileMenuWindow" onAction="#menuItemClicked" text="Новый">
+                        <graphic>
+                            <ImageView>
+                                <Image  url="@/resources/new16.png"/>
+                            </ImageView>
+                        </graphic>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem fx:id="openFileMenuItem" onAction="#menuItemClicked" text="Открыть">
+                        <graphic>
+                            <ImageView>
+                                <Image url="@/resources/open16.png"/>
+                            </ImageView>
+                        </graphic>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem fx:id="saveFileMenuItem" onAction="#menuItemClicked" text="Сохранить">
+                        <graphic>
+                            <ImageView>
+                                <Image url="@/resources/save16.png"/>
+                            </ImageView>
+                        </graphic>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem fx:id="saveAsFileMenuItem" onAction="#menuItemClicked" text="Сохранить как">
+                        <graphic>
+                            <ImageView>
+                                <Image url="@/resources/save_as16.png"/>
+                            </ImageView>
+                        </graphic>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem fx:id="renameFileMenuItem" onAction="#menuItemClicked" text="Переименовать">
+                        <graphic>
+                            <ImageView>
+                                <Image url="@/resources/edit16.png"/>
+                            </ImageView>
+                        </graphic>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem fx:id="deleteFileMenuItem" onAction="#menuItemClicked" text="Удалить">
+                        <graphic>
+                            <ImageView>
+                                <Image url="@/resources/delete16.png"/>
+                            </ImageView>
+                        </graphic>
+                    </MenuItem>
+
+                </items>
+            </Menu>
+            <Menu text="Низкоуровневые функции">
+<!--                <graphic>-->
+<!--                    <ImageView>-->
+<!--                        <Image url="@/resources/asm16.gif"/>-->
+<!--                    </ImageView>-->
+<!--                </graphic>-->
+                <items>
+                    <MenuItem  fx:id="divMenuItem" onAction="#menuItemClicked" text="Деление">
+<!--                        <graphic>-->
+<!--                            <ImageView>-->
+<!--                                <Image url="@/resources/division16.gif"/>-->
+<!--                            </ImageView>-->
+<!--                        </graphic>-->
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem  fx:id="mulMenuItem" onAction="#menuItemClicked" text="Умножение">
+<!--                        <graphic>-->
+<!--                            <ImageView>-->
+<!--                                <Image url="@/resources/multi16.gif"/>-->
+<!--                            </ImageView>-->
+<!--                        </graphic>-->
+                    </MenuItem>
+                </items>
+            </Menu>
+            <Menu text="Анализ синтаксической конструкции">
+                <items>
+                    <MenuItem  fx:id="foreachMenuItem" onAction="#menuItemClicked" text="Foreach">
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem  fx:id="whileMenuItem" onAction="#menuItemClicked" text="While">
+                    </MenuItem>
+                </items>
+            </Menu>
+            <Menu text="База данных">
+                <items>
+                    <MenuItem  fx:id="createDBItem" onAction="#menuItemClicked" text="Создать">
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem  fx:id="chooseDBItem" onAction="#menuItemClicked" text="Выбрать">
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem  fx:id="openDBItem" onAction="#menuItemClicked" text="Открыть">
+                    </MenuItem>
+                </items>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <GridPane alignment="CENTER" hgap="15" vgap="15">
+            <VBox alignment="CENTER" fx:id="vboxMainWindow" onDragOver="#dragFileOver" onDragDropped="#dropDraggedFile"
+                   GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Label text="Перетащите свой файл"  fx:id="fileNameLabel" >
+                    <font>
+                        <Font size="20"/>
+                    </font>
+                </Label>
+                <ListView prefHeight="450" prefWidth="300" fx:id="listFileView"/>
+            </VBox>
+
+                <HBox alignment="TOP_CENTER"
+                  GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <Button text="Добавить" fx:id="addRecordButton" onAction="#buttonClicked">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@/resources/add24.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button text="Изменить" fx:id="editRecordButton" onAction="#buttonClicked">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@/resources/edit24.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button text="Удалить" fx:id="deleteRecordButton" onAction="#buttonClicked">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@/resources/delete24.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <VBox alignment="CENTER"
+                   GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <Label text="Лог программы">
+                    <font>
+                        <Font size="20"/>
+                    </font>
+                </Label>
+                <TextArea prefHeight="450" prefWidth="400" fx:id="programLogTextArea" wrapText="true" editable="false">
+                </TextArea>
+
+            </VBox>
+<!--            <HBox alignment="TOP_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1">-->
+<!--                <Button text="Сохранить лог.txt" fx:id="saveLogButton" onAction="#buttonClicked">-->
+<!--                    <graphic>-->
+<!--                        <ImageView>-->
+<!--                            <Image url="@/resources/Save24.gif"/>-->
+<!--                        </ImageView>-->
+<!--                    </graphic>-->
+<!--                </Button>-->
+<!--            </HBox>-->
+
+        </GridPane>
+
+    </center>
+
+</BorderPane>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controllers.MulWindowController">
+    <content>
+        <GridPane vgap="7" hgap="10">
+            <Label text="Введите а" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="firstNumber" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Введите b" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="secondNumber" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Button  onAction="#countButtonClicked" text="Посчитать a*b" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="resultField" GridPane.rowIndex="2" GridPane.columnIndex="1" editable="false"/>
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="3" alignment="TOP_CENTER">
+                <Label text="Бит переполнения -   " fx:id="overflowBitLabel" />
+            </VBox>
+
+        </GridPane>
+    </content>
+
+</DialogPane>
